@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
 public class ChunkRenderer : MonoBehaviour
 {
-    private const int ChunkWidth = 16;
-    private const int ChunkHeight = 256;
+    public const int ChunkWidth = 16;
+    public const int ChunkHeight = 256;
 
     public int[,,] Blocks = new int[ChunkWidth, ChunkHeight, ChunkWidth];
     
@@ -17,17 +17,8 @@ public class ChunkRenderer : MonoBehaviour
     private void Start()
     {
         Mesh chunkMesh = new Mesh();
-        
-        Blocks[0,0,0] = 1;
-        Blocks[0,0,1] = 1;
-        Blocks[0,0,2] = 1;
-        Blocks[5,1,1] = 1;
-        Blocks[5,2,1] = 1;
-        Blocks[5,0,1] = 1;
-        Blocks[6,1,1] = 1;
-        Blocks[4,1,1] = 1;
-        Blocks[5,1,2] = 1;
-        Blocks[5,1,0] = 1;
+
+        Blocks = TerrainGenerator.GenerateTerrain((int)transform.position.x, (int)transform.position.z);
 
         for (int y = 0; y < ChunkHeight; y++)
         {

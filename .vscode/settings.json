@@ -66,5 +66,7 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "SchizoCraft.sln"
+    "dotnet.defaultSolution": "SchizoCraft.sln",
+    "editor.fontSize": 21,
+    "editor.lineHeight": 1.25
 }

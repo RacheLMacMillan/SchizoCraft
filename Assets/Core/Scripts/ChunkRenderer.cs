@@ -38,7 +38,6 @@ public class ChunkRenderer : MonoBehaviour
         chunkMesh.RecalculateBounds();
 
         GetComponent<MeshFilter>().mesh = chunkMesh;
-        GetComponent<MeshCollider>().sharedMesh = chunkMesh;
     }
     
     private int GetBlockAtPosition(Vector3Int blockPosition)

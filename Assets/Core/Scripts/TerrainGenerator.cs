@@ -2,23 +2,29 @@ using UnityEngine;
 
 public static class TerrainGenerator
 {
-    public static BlockTypes[,,] GenerateTerrain(int xOffset, int zOffset)
+    public static int[,,] GenerateTerrain()
     {
-        var result = new BlockTypes[ChunkRenderer.ChunkWidth, ChunkRenderer.ChunkHeight, ChunkRenderer.ChunkWidth];
+        int[,,] result = new int
+        [
+            ChunkRenderer.ChunkWidth, 
+            ChunkRenderer.ChunkHeight, 
+            ChunkRenderer.ChunkWidth
+        ];
         
         for (int x = 0; x < ChunkRenderer.ChunkWidth; x++)
-        {
-            for (int z = 0; z <ChunkRenderer.ChunkWidth; z++)
+		{
+			for (int z = 0; z < ChunkRenderer.ChunkWidth; z++)
             {
-                float height = Mathf.PerlinNoise((x + xOffset) * .2f, (z + zOffset) * .2f) * 5 + 10;
+                float height = Mathf.PerlinNoise(x * 0.2f, z * 0.2f) * 5 + 10;
                 
                 for (int y = 0; y < height; y++)
                 {
-                    result[x, y, z] = BlockTypes.Grass;
+                    result[x, y, z] = 1;
                 }
             }
-        }
+		}
 
         return result;
     }
+    
 }

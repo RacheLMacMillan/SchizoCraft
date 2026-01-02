@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4345341741217160108}
   - component: {fileID: 59426542891067430}
   - component: {fileID: 7626205593640759160}
-  - component: {fileID: 1749117776062011183}
+  - component: {fileID: 8442287659016596699}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &1749117776062011183
+--- !u!114 &8442287659016596699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,4 +122,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2cf6ba02d7ca34bbedb2422f0a18f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentWorld: {fileID: 0}
